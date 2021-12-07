@@ -64,7 +64,7 @@ php artisan schedule:run
 ```
 to run all schedules commands in the system.
 
-While testing the api/promo endpoint, you will need to select an existing promocode, this can be done after triggering the code generation, otherwise the endpoint will return an error message.
+While testing the api/promo endpoint, you will need to select an existing promocode, this can be done after triggering the code generation and selecting an active promocode from api/promocode/all, otherwise the endpoint will return an error message.
 
 ## Testing 
 
