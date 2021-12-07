@@ -105,11 +105,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}promocode/all",
+					"raw": "{{url}}/promocode/all",
 					"host": [
-						"{{url}}promocode"
+						"{{url}}"
 					],
 					"path": [
+						"promocode",
 						"all"
 					]
 				}
@@ -153,11 +154,12 @@
 					}
 				},
 				"url": {
-					"raw": "promocode/active",
+					"raw": "{{url}}/promocode/active",
 					"host": [
-						"promocode"
+						"{{url}}"
 					],
 					"path": [
+						"promocode",
 						"active"
 					]
 				}
@@ -195,7 +197,7 @@
 					"formdata": [
 						{
 							"key": "promo_code",
-							"value": "BLCKFRI_155cgwb",
+							"value": "BLCKFRI_15qi3s6",
 							"type": "text"
 						},
 						{

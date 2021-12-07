@@ -22,11 +22,6 @@ class AuthController extends Controller
         $this->middleware('auth:api', ['except' => ['api', 'login', 'register']]);
     }
 
-    public function api()
-    {
-        return response()->json(['api' => 'API version 1'], 200);
-    }
-
     /**
      * Get a JWT via given credentials.
      *

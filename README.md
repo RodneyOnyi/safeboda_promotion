@@ -14,12 +14,17 @@ This module has not calculated ride cost, this was assumed to be outside the sco
 
 To install the node dependancies run 
 ```
-npm run install
+npm install
 ```
 then run 
 
 ```
 composer install
+```
+
+Finally generate the tables and seed data to the database with
+```
+php artisan migrate --seed
 ```
 
 You will need to set up the .env file, this can be done by copying the .env.example file and editing the variables based on your set up
@@ -31,6 +36,8 @@ GOOGLE_API=
 ```
 
 The Google API can be acquired by following the instructions shared at https://developers.google.com/maps/documentation/directions/overview
+
+If the value is not updated, there will be no data for the route field on the api/promo endpoint.
 
 ## Endpoints 
 
@@ -45,7 +52,7 @@ A postman collection and env has been added for purposes of testing the api
 
 ## Code Generation
 
-Using a schedule command, promo codes are generated periodically. This can be triggered by running
+Using a schedule command, promo codes are generated periodically. This can be triggered by running. This will need to be set as a cron job to periodically generate promocodes.
 
 ```
 php artisan  promocode:generate
@@ -56,6 +63,8 @@ For the specifc command or
 php artisan schedule:run
 ```
 to run all schedules commands in the system.
+
+While testing the api/promo endpoint, you will need to select an existing promocode, this can be done after triggering the code generation, otherwise the endpoint will return an error message.
 
 ## Testing 
 
