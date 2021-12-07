@@ -22,7 +22,6 @@ then run
 composer install
 ```
 
-
 You will need to set up the .env file, this can be done by copying the .env.example file and editing the variables based on your set up
 
 You will need to add two additional fields for the application to function as expected.
