@@ -44,7 +44,7 @@ class PromoCodeController extends Controller
         if ($validPromo) {
             return response()->json([
                 'status' => 'success',
-                'message' => "Your promotion code is valid for " . $validPromo['discount_percentage'] . "%",
+                'message' => "Your promotion code is valid for " . $validPromo['discount'] . " Ksh",
                 'data' => $validPromo
             ]);
         } else {

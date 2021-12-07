@@ -17,7 +17,8 @@ class PromoEventSeeder extends Seeder
   {
     DB::table('promo_events')->insert([
       'promo_code' => 'BLCKFRI_15',
-      'ride_percent' => 15,
+      'discount' => 300,
+      'min_spend' => 700,
       'voucher_limit' => 50,
       'expiry_date' => now(),
     ]);

@@ -95,7 +95,8 @@ class PromoCode extends Model
                 $route =  (new PromoCode)->GoogleAPI($url);
 
                 return array(
-                    'discount_percentage' => $promoCode->ride_percent,
+                    'discount' => $promoCode->discount,
+                    'min_spend' => $promoCode->min_spend,
                     'expiry' => $promoCode->expiry_date,
                     'route' => $route->routes[0]->legs ?? []
                 );

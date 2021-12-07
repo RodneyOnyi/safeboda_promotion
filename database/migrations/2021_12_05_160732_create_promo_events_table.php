@@ -17,7 +17,8 @@ class CreatePromoEventsTable extends Migration
         Schema::create('promo_events', function (Blueprint $table) {
             $table->id();
             $table->string('promo_code');
-            $table->integer('ride_percent');
+            $table->integer('discount');
+            $table->integer('min_spend');
             $table->integer('voucher_limit');
             $table->date('expiry_date');
             $table->boolean('status')->default(2);
