@@ -17,6 +17,7 @@ class CreatePromoCodesTable extends Migration
         Schema::create('promo_codes', function (Blueprint $table) {
             $table->id();
             $table->integer('promo_event_id');
+            $table->integer('ride_id')->nullable();
             $table->string('name');
             $table->boolean('status')->default(1);
             $table->timestamp('created_at')->useCurrent();
