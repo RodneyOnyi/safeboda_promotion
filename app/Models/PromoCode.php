@@ -35,8 +35,8 @@ class PromoCode extends Model
         $promoEvent = PromoEvent::where('status', 2)->first();
 
         if ($promoEvent) {
+            $promoCodes = PromoCode::count();
             for ($i = 0; $i < 10; $i++) {
-                $promoCodes = PromoCode::count();
                 if ($promoCodes < $promoEvent->voucher_limit) {
                     $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
                     $random = substr(str_shuffle($permitted_chars), 0, 5);
@@ -44,7 +44,10 @@ class PromoCode extends Model
                     $request['promo_event_id'] = $promoEvent->id;
                     $request['name'] = $promoEvent->promo_code . $random;
 
-                    (new PromoCode)->add($request);
+                    $added = (new PromoCode)->add($request);
+                    if ($added) {
+                        $promoCodes++;
+                    }
                 } else if ($promoCodes == $promoEvent->voucher_limit) {
                     $promoEvent->status = 1;
                     $promoEvent->save();

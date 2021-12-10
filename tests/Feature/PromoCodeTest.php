@@ -111,8 +111,9 @@ class PromoCodeTest extends TestCase
         $response = $this->actingAs($user, 'api')->json('POST', '/api/promo', $data);
         $response->assertStatus(200);
         $response->assertJson(['status' => 'success']);
-        $response->assertJson(['message' => "Your promotion code is valid for 15%"]);
-        $response->assertJsonFragment(['discount_percentage' => 15]);
+        $response->assertJson(['message' => "Your promotion code is valid for 300 Ksh"]);
+        $response->assertJsonFragment(['discount' => 300]);
+        $response->assertJsonFragment(['min_spend' => 700]);
     }
 
 }
